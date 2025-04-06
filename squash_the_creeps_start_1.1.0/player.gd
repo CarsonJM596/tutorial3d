@@ -60,5 +60,4 @@ func die():
 	queue_free()
 
 func _on_mob_detector_body_entered(body: Node3D) -> void:
-	print("dead")
 	die()
