@@ -16,3 +16,7 @@ shape = SubResource("BoxShape3D_bup65")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
 mesh = SubResource("BoxMesh_7j54v")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+shadow_enabled = true
+shadow_normal_bias = 1.0
