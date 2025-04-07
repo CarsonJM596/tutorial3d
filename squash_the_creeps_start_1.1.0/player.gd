@@ -24,6 +24,9 @@ func _physics_process(delta):
 	if direction != Vector3.ZERO:
 		direction = direction.normalized()
 		$pivot.basis = Basis.looking_at(direction)
+		$AnimationPlayer.speed_scale = 4
+	else:
+		$AnimationPlayer.speed_scale = 1
 
 	# Ground Velocity
 	target_velocity.x = direction.x * speed
@@ -55,6 +58,7 @@ func _physics_process(delta):
 				# Prevent further duplicate calls.
 				break
 	move_and_slide()
+	$pivot.rotation.x = PI / 6 * velocity.y / jump_impulse
 func die():
 	hit.emit()
 	queue_free()
